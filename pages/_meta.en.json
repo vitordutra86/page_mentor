@@ -1,0 +1,21 @@
+{
+  "index": "Introdução",
+  "pacef": "PACEF",
+  "chain-of-thougt": "Chain-of-Thougt",
+  "react": "ReACT",
+  "tree-of-thougt": "Tree-of-Thougt",
+  "generated-knowledge": "Generated Knowledge",
+  "self-consistency": "Self-consistency",
+  "dialogo-socratico": "Diálogo Socrático",
+  "expert-interleaving": "Expert Interleaving",
+  "self-critique-e-self-refinement": "Self-critique e Self-refinement",
+  "chain-of-verification": "Chain-of-Verification",
+  "prompt-chaining": "Prompt Chaining",
+  "skeleton-of-thought": "Skeleton-of-Thought",
+  "goal-oriented-planning": "Goal-Oriented Planning",
+  "meta-prompt": "Meta-prompt",
+  "template-based-prompt": "Template-based Prompt",
+  "delimitadores": "Delimitadores",
+  "json": "Json",
+  "rag": "RAG"
+}
