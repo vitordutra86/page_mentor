@@ -5,22 +5,9 @@ import os
 def convert_md_to_html(input_dir, output_dir):
     os.makedirs(output_dir, exist_ok=True)
 
-    # Get list of all markdown files in the root of my-nextra-site
-    all_md_files = []
-    for filename in os.listdir("/home/ubuntu/my-nextra-site/"):
-        if filename.endswith(".md") and filename != "README.md": # Exclude README.md
-            all_md_files.append(filename.replace(".md", ".html"))
-    all_md_files.sort()
-
-    nav_items = ""
-    for html_file in all_md_files:
-        title = html_file.replace(".html", "").replace("-", " ").title()
-        nav_items += f"<a href=\"{html_file}\">{title}</a>\n"
-
-    # Now process the markdown files from the root of my-nextra-site
-    for filename in os.listdir("/home/ubuntu/my-nextra-site/"):
-        if filename.endswith(".md") and filename != "README.md":
-            input_filepath = os.path.join("/home/ubuntu/my-nextra-site/", filename)
+    for filename in os.listdir(input_dir):
+        if filename.endswith(".md") and filename != "_meta.en.json": # Exclude _meta.en.json
+            input_filepath = os.path.join(input_dir, filename)
             output_filename = filename.replace(".md", ".html")
             output_filepath = os.path.join(output_dir, output_filename)
 
@@ -129,49 +116,6 @@ def convert_md_to_html(input_dir, output_dir):
         li {{
             margin-bottom: 0.6em;
         }}
-        /* Navbar styles */
-        .navbar {{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: var(--primary-color);
-            padding: 10px 20px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }}
-        .navbar a {{
-            color: white;
-            padding: 8px 15px;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }}
-        .navbar a:hover {{
-            background-color: #0056b3;
-        }}
-        .dropdown {{
-            position: relative;
-            display: inline-block;
-        }}
-        .dropdown-content {{
-            display: none;
-            position: absolute;
-            background-color: var(--primary-color);
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-            border-radius: 5px;
-        }}
-        .dropdown-content a {{
-            color: white;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            text-align: left;
-        }}
-        .dropdown-content a:hover {{background-color: #0056b3;}}
-        .dropdown:hover .dropdown-content {{display: block;}}
-
         /* Responsive adjustments */
         @media (max-width: 768px) {{
             body {{
@@ -189,37 +133,16 @@ def convert_md_to_html(input_dir, output_dir):
             p, ul, ol {{
                 font-size: 1em;
             }}
-            .navbar {{
-                flex-direction: column;
-                align-items: flex-start;
-            }}
-            .navbar a {{
-                width: 100%;
-                text-align: left;
-            }}
-            .dropdown {{
-                width: 100%;
-            }}
-            .dropdown-content {{
-                width: 100%;
-            }}
         }}
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <div class="navbar">
-            <a href="index.html">Home</a>
-            <div class="dropdown">
-                <a href="#" class="dropbtn">Técnicas &#9662;</a>
-                <div class="dropdown-content">
-{nav_items}
-                </div>
-            </div>
-        </div>
+        <div class="navbar-placeholder"></div> <!-- Placeholder for the navbar -->
         {html_content}
     </div>
+    <script src="navbar.js"></script>
 </body>
 </html>
 """
@@ -233,5 +156,7 @@ if __name__ == "__main__":
     output_html_dir = "/home/ubuntu/my-nextra-site/out"
     
     convert_md_to_html(input_pages_dir, output_html_dir)
+
+
 
 

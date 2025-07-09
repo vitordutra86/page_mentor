@@ -15,11 +15,6 @@ def create_index_html(output_dir):
         title = html_file.replace(".html", "").replace("-", " ").title()
         list_items += f"<li><a href=\"{html_file}\">{title}</a></li>\n"
 
-    nav_items = ""
-    for html_file in html_files:
-        title = html_file.replace(".html", "").replace("-", " ").title()
-        nav_items += f"<a href=\"{html_file}\">{title}</a>\n"
-
     index_html_content = f"""
 <!DOCTYPE html>
 <html lang="en">
@@ -181,15 +176,7 @@ def create_index_html(output_dir):
 </head>
 <body>
     <div class="container">
-        <div class="navbar">
-            <a href="index.html">Home</a>
-            <div class="dropdown">
-                <a href="#" class="dropbtn">Técnicas &#9662;</a>
-                <div class="dropdown-content">
-{nav_items}
-                </div>
-            </div>
-        </div>
+        <div class="navbar-placeholder"></div> <!-- Placeholder for the navbar -->
         <h1>Guia de Técnicas de Prompt</h1>
         <p>Este site reúne diversas técnicas de prompt para otimizar suas interações com IAs generativas. Explore as diferentes abordagens para melhorar a qualidade e a relevância das suas respostas.</p>
         <h2>Técnicas Disponíveis:</h2>
@@ -197,6 +184,7 @@ def create_index_html(output_dir):
 {list_items}
         </ul>
     </div>
+    <script src="navbar.js"></script>
 </body>
 </html>
 """
