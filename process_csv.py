@@ -3,7 +3,7 @@ import pandas as pd
 import os
 import json
 
-def process_csv_to_mdx(csv_file, output_dir, meta_file):
+def process_csv_to_md(csv_file, output_dir, meta_file):
     df = pd.read_csv(csv_file)
 
     # Ensure output directory exists
@@ -18,10 +18,10 @@ def process_csv_to_mdx(csv_file, output_dir, meta_file):
 
         # Sanitize technique name for filename and URL
         filename = tecnica.lower().replace(" ", "-").replace("á", "a").replace("é", "e").replace("í", "i").replace("ó", "o").replace("ú", "u").replace("ç", "c").replace("ã", "a").replace("õ", "o").replace("â", "a").replace("ê", "e").replace("ô", "o")
-        filepath = os.path.join(output_dir, f"{filename}.mdx")
+        filepath = os.path.join(output_dir, f"{filename}.md") # Changed to .md
 
-        # Create MDX content
-        mdx_content = f"""
+        # Create Markdown content
+        md_content = f"""
 # {tecnica}
 
 ## Descrição
@@ -36,7 +36,7 @@ def process_csv_to_mdx(csv_file, output_dir, meta_file):
 """
 
         with open(filepath, "w", encoding="utf-8") as f:
-            f.write(mdx_content)
+            f.write(md_content)
         print(f"Created {filepath}")
         
         new_meta_content[filename] = tecnica
@@ -57,6 +57,6 @@ if __name__ == "__main__":
     output_pages_dir = "/home/ubuntu/my-nextra-site/pages"
     meta_json_file = "_meta.en.json"
     
-    process_csv_to_mdx(csv_path, output_pages_dir, meta_json_file)
+    process_csv_to_md(csv_path, output_pages_dir, meta_json_file)
 
 
