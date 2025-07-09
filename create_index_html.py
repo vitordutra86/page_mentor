@@ -23,41 +23,60 @@ def create_index_html(output_dir):
     <title>Guia de Técnicas de Prompt</title>
     <style>
         :root {{
-            --text-color: #2c3e50;
-            --bg-color: #ffffff;
-            --link-color: #3498db;
-            --code-bg: #ecf0f1;
-            --border-color: #e0e0e0;
+            --primary-color: #007bff;
+            --secondary-color: #6c757d;
+            --text-color: #343a40;
+            --heading-color: #212529;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --border-color: #dee2e6;
+            --code-bg: #e9ecef;
+            --code-text: #bd4147;
         }}
         body {{
-            font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;
-            line-height: 1.8;
+            font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
             color: var(--text-color);
             background-color: var(--bg-color);
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }}
+        .container {{
+            max-width: 960px;
+            width: 100%;
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
             box-sizing: border-box;
         }}
+        h1, h2, h3, h4, h5, h6 {{
+            color: var(--heading-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            line-height: 1.3;
+            font-weight: 700;
+        }}
         h1 {{
-            color: var(--text-color);
+            font-size: 2.8em;
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 15px;
+            margin-bottom: 1.2em;
             text-align: center;
-            font-size: 2.5em;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 10px;
-            margin-bottom: 1em;
         }}
         h2 {{
-            color: var(--text-color);
-            font-size: 1.8em;
+            font-size: 2.2em;
             border-bottom: 1px solid var(--border-color);
-            padding-bottom: 5px;
+            padding-bottom: 10px;
             margin-bottom: 1em;
         }}
         p {{
             margin-bottom: 1em;
+            font-size: 1.1em;
         }}
         ul {{
             list-style: none;
@@ -67,24 +86,45 @@ def create_index_html(output_dir):
             margin-bottom: 10px;
         }}
         a {{
-            color: var(--link-color);
+            color: var(--primary-color);
             text-decoration: none;
             font-size: 1.2em;
-            transition: color 0.2s ease-in-out;
+            transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out;
         }}
         a:hover {{
             text-decoration: underline;
-            color: #2980b9;
+            color: #0056b3;
+        }}
+        /* Responsive adjustments */
+        @media (max-width: 768px) {{
+            body {{
+                padding: 15px;
+            }}
+            .container {{
+                padding: 25px;
+            }}
+            h1 {{
+                font-size: 2em;
+            }}
+            h2 {{
+                font-size: 1.6em;
+            }}
+            p, ul, ol {{
+                font-size: 1em;
+            }}
         }}
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Guia de Técnicas de Prompt</h1>
-    <p>Este site reúne diversas técnicas de prompt para otimizar suas interações com IAs generativas. Explore as diferentes abordagens para melhorar a qualidade e a relevância das suas respostas.</p>
-    <h2>Técnicas Disponíveis:</h2>
-    <ul>
+    <div class="container">
+        <h1>Guia de Técnicas de Prompt</h1>
+        <p>Este site reúne diversas técnicas de prompt para otimizar suas interações com IAs generativas. Explore as diferentes abordagens para melhorar a qualidade e a relevância das suas respostas.</p>
+        <h2>Técnicas Disponíveis:</h2>
+        <ul>
 {list_items}
-    </ul>
+        </ul>
+    </div>
 </body>
 </html>
 """
@@ -97,5 +137,7 @@ if __name__ == "__main__":
     output_html_dir = "/home/ubuntu/my-nextra-site/out"
     
     create_index_html(output_html_dir)
+
+
 
 
