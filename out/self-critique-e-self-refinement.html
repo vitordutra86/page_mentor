@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self Critique E Self Refinement</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 
+
+
+            "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: #222;
+            margin-top: 1em;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        a {
+            color: #0070f3;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Self-critique e Self-refinement</h1>
+<h2>Descrição</h2>
+<p>Simula a metacognição (capacidade de pensar sobre o próprio pensamento). Conduz a IA a refletir sobre a sua própria resposta e depois reproduzir algo mais qualificado. Com o self-critique a IA realiza um diagnóstico, apontando falhas, lacunas e oportunidades de melhoria. Com o self-refinement, a IA aperfeiçoa a resposta iterativamente (refinamento), na implementação das soluções. As duas técnicas devem ser combinadas na sequência em que foram expostas.</p>
+<h2>Templates (Prompts)</h2>
+<p>```
+Técnica: Self-critique</p>
+<h3>Input</h3>
+<p>Resposta inicial: [Descrição do caso/problema/argumentos]</p>
+<h3>Self-Critique ###:</h3>
+<ul>
+<li>Erros identificados: [Listagem dos erros]</li>
+<li>Fragilidades ou omissões: [Pontos frágeis ou omissos]</li>
+<li>Sugestões de melhoria: [Propostas de aperfeiçoamento]</li>
+</ul>
+<h3>Output</h3>
+<p>Conclusão da crítica:</p>
+<p>Técnica: Self-refinement</p>
+<h3>Input</h3>
+<p>Resposta original revisada (self-critique): [Pontos para correção identificados]</p>
+<h3>Etapas de refinamento iterativo ###:</h3>
+<p>1ª versão ajustada: [Alterações aplicadas]
+2ª versão ajustada: [Novas melhorias após segunda revisão]</p>
+<h3>Output</h3>
+<p>Resposta final aperfeiçoada:
+```</p>
+</body>
+</html>

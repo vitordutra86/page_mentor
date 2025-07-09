@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Json</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 
+
+
+            "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: #222;
+            margin-top: 1em;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        a {
+            color: #0070f3;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Json</h1>
+<h2>Descrição</h2>
+<p>O JSON permite que a IA organize informações em um formato padronizado, hierárquico e prontamente integrável a sistemas, APIs, planilhas, dashboards ou automações.</p>
+<h2>Templates (Prompts)</h2>
+<p>```
+Técnica: Estruturação em formato Json</p>
+<h3>CONTEXTO</h3>
+<p>[Descreva o cenário, os dados e o papel do modelo.]</p>
+<h3>TAREFA</h3>
+<p>Gere a resposta exclusivamente no formato JSON, seguindo esta estrutura:</p>
+<p>{
+  "titulo": "[Título do documento]",
+  "contexto": "[Descrição do contexto]",
+  "fundamentacao": {
+    "formal": "[Análise formal]",
+    "material": ["[Princípio 1]", "[Princípio 2]"]
+  },
+  "jurisprudencia": [
+    {
+      "tribunal": "[Tribunal]",
+      "ementa": "[Resumo da decisão]"
+    }
+  ],
+  "conclusao": "[Síntese final]"
+}</p>
+<h3>Orientações ao modelo de IA</h3>
+<ul>
+<li>Não inclua textos fora da estrutura JSON.</li>
+<li>Utilize apenas dados pertinentes.</li>
+<li>Caso não haja dados para algum campo, retorne null.</li>
+</ul>
+<h3>EXECUTE</h3>
+<p>```</p>
+</body>
+</html>

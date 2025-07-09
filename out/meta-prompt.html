@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta Prompt</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 
+
+
+            "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: #222;
+            margin-top: 1em;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        a {
+            color: #0070f3;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Meta-prompt</h1>
+<h2>Descrição</h2>
+<p>Prompt para criar prompts. Meta prompt representa uma técnica sofisticada que foca nos aspectos estruturais e sintáticos das tarefas, priorizando o formato e padrão de informações sobre conteúdo específico. Técnica ideal para estruturação de modelos de prompt, especialmente para modelos que buscam algum tipo de padronização ou linha comum de aplicação guiada.</p>
+<h2>Templates (Prompts)</h2>
+<p>```
+Técnica: Meta-prompt</p>
+<h3>Input</h3>
+<p>Objetivo do Prompt:
+- [Defina claramente o que o usuário deseja alcançar com este prompt.]
+Perfil e Papel do Modelo:
+- [Ex.: Advogado, Juiz, Professor de Direito, Consultor, Especialista Técnico, ou múltiplos papéis intercalados.]
+Tarefas Específicas:
+- [Liste as subtarefas ou microações que o modelo deve realizar dentro do prompt final.]
+Formato de Resposta Esperado:
+- Texto corrido | Bullet points | Markdown | Tabela | Código JSON | Quadro comparativo | Template jurídico formal | Outro: [especifique].
+Tom e Estilo:
+- Formal técnico | Didático | Conciso | Extensivo | Persuasivo | Neutro | Empático | Outro: [especifique].</p>
+<p>Restrições e Regras:
+- Não inventar dados, jurisprudência ou fatos.
+- Não fazer suposições não fundamentadas.
+- Usar linguagem conforme norma culta.
+- Apontar incertezas, se houver.
+- [Outras restrições específicas.]</p>
+<p>Delimitadores e Organização:
+- Use ### para separar seções principais.
+- Use <Tags> para seções aninhadas ou contextos específicos.
+- Use ``` para blocos de dados, texto legal ou código.</p>
+<p>Contexto do Usuário:
+- [Forneça qualquer contexto relevante sobre o usuário, o caso ou o problema.]</p>
+<p>Exemplos de Entrada:
+- [Inclua exemplos específicos do tipo de entrada que o prompt final receberá.]</p>
+<p>Exemplos de Saída Esperada:
+- [Inclua exemplos que descrevem como deve ser a resposta produzida.]</p>
+<h3>Orientação ao modelo de IA</h3>
+<ul>
+<li>O modelo de IA deverá perguntar ao usuário etapa por etapa os pontos que ainda não foram preenchidos acima (preenchimento interativo e em etapas para faciliar a inserção da informação. Obrigatoriamente o modelo deverá fazer uma pergunta por vez.
+```</li>
+</ul>
+</body>
+</html>
