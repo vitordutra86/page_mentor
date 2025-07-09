@@ -7,8 +7,8 @@ def convert_md_to_html(input_dir, output_dir):
 
     # Get list of all markdown files in the root of my-nextra-site
     all_md_files = []
-    for filename in os.listdir("/home/ubuntu/my-nextra-site/pages/"):
-        if filename.endswith(".md") and filename != "_meta.en.json": # Exclude _meta.en.json
+    for filename in os.listdir("/home/ubuntu/my-nextra-site/"):
+        if filename.endswith(".md") and filename != "README.md": # Exclude README.md
             all_md_files.append(filename.replace(".md", ".html"))
     all_md_files.sort()
 
@@ -17,9 +17,10 @@ def convert_md_to_html(input_dir, output_dir):
         title = html_file.replace(".html", "").replace("-", " ").title()
         nav_items += f"<a href=\"{html_file}\">{title}</a>\n"
 
-    for filename in os.listdir(input_dir):
-        if filename.endswith(".md"):
-            input_filepath = os.path.join(input_dir, filename)
+    # Now process the markdown files from the root of my-nextra-site
+    for filename in os.listdir("/home/ubuntu/my-nextra-site/"):
+        if filename.endswith(".md") and filename != "README.md":
+            input_filepath = os.path.join("/home/ubuntu/my-nextra-site/", filename)
             output_filename = filename.replace(".md", ".html")
             output_filepath = os.path.join(output_dir, output_filename)
 
