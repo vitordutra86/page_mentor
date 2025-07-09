@@ -2,6 +2,7 @@
 import os
 
 def create_index_html(output_dir):
+    # Get list of all html files in the root of my-nextra-site/out
     html_files = []
     for filename in os.listdir(output_dir):
         if filename.endswith(".html") and filename != "index.html":

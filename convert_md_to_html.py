@@ -5,14 +5,15 @@ import os
 def convert_md_to_html(input_dir, output_dir):
     os.makedirs(output_dir, exist_ok=True)
 
-    html_files = []
-    for filename in os.listdir(input_dir):
-        if filename.endswith(".md"):
-            html_files.append(filename.replace(".md", ".html"))
-    html_files.sort()
+    # Get list of all markdown files in the root of my-nextra-site
+    all_md_files = []
+    for filename in os.listdir("/home/ubuntu/my-nextra-site/pages/"):
+        if filename.endswith(".md") and filename != "_meta.en.json": # Exclude _meta.en.json
+            all_md_files.append(filename.replace(".md", ".html"))
+    all_md_files.sort()
 
     nav_items = ""
-    for html_file in html_files:
+    for html_file in all_md_files:
         title = html_file.replace(".html", "").replace("-", " ").title()
         nav_items += f"<a href=\"{html_file}\">{title}</a>\n"
 
@@ -48,7 +49,7 @@ def convert_md_to_html(input_dir, output_dir):
             --code-text: #bd4147;
         }}
         body {{
-            font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+            font-family: \'Inter\', \'Helvetica Neue\', Arial, sans-serif;
             line-height: 1.6;
             color: var(--text-color);
             background-color: var(--bg-color);
@@ -103,7 +104,7 @@ def convert_md_to_html(input_dir, output_dir):
             color: var(--code-text);
         }}
         code {{
-            font-family: 'Fira Code', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+            font-family: \'Fira Code\', \'SFMono-Regular\', Consolas, \'Liberation Mono\', Menlo, Courier, monospace;
             background-color: var(--code-bg);
             padding: 3px 7px;
             border-radius: 5px;
