@@ -1,7 +1,7 @@
 
 import os
 
-def create_index_html(output_dir, meta_file):
+def create_index_html(output_dir):
     html_files = []
     for filename in os.listdir(output_dir):
         if filename.endswith(".html") and filename != "index.html":
@@ -22,17 +22,42 @@ def create_index_html(output_dir, meta_file):
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guia de Técnicas de Prompt</title>
     <style>
+        :root {{
+            --text-color: #2c3e50;
+            --bg-color: #ffffff;
+            --link-color: #3498db;
+            --code-bg: #ecf0f1;
+            --border-color: #e0e0e0;
+        }}
         body {{
             font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            box-sizing: border-box;
         }}
         h1 {{
-            color: #222;
+            color: var(--text-color);
             text-align: center;
+            font-size: 2.5em;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-bottom: 1em;
+        }}
+        h2 {{
+            color: var(--text-color);
+            font-size: 1.8em;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 5px;
+            margin-bottom: 1em;
+        }}
+        p {{
+            margin-bottom: 1em;
         }}
         ul {{
             list-style: none;
@@ -42,12 +67,14 @@ def create_index_html(output_dir, meta_file):
             margin-bottom: 10px;
         }}
         a {{
-            color: #0070f3;
+            color: var(--link-color);
             text-decoration: none;
             font-size: 1.2em;
+            transition: color 0.2s ease-in-out;
         }}
         a:hover {{
             text-decoration: underline;
+            color: #2980b9;
         }}
     </style>
 </head>
@@ -68,8 +95,7 @@ def create_index_html(output_dir, meta_file):
 
 if __name__ == "__main__":
     output_html_dir = "/home/ubuntu/my-nextra-site/out"
-    meta_json_file = "_meta.en.json"
     
-    create_index_html(output_html_dir, meta_json_file)
+    create_index_html(output_html_dir)
 
 
